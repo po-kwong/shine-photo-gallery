@@ -572,24 +572,17 @@
   }
 
   function renderCoverImage(url, title) {
-    if (!url) return renderCoverFallback(title);
+    if (!url) return renderCoverFallback();
 
     return `
       <img src="${escapeAttr(url)}" alt="${escapeAttr(title || "活動相簿封面")}" loading="lazy" onerror="this.remove();" />
     `;
   }
 
-  function renderCoverFallback(title) {
+  function renderCoverFallback() {
     return `
-      <span class="cover-art" aria-hidden="true">
-        <span>${escapeHtml(getCoverInitials(title))}</span>
-      </span>
+      <span class="cover-art" aria-hidden="true"></span>
     `;
-  }
-
-  function getCoverInitials(title) {
-    const value = String(title || "相簿").trim();
-    return value.slice(0, 2).toUpperCase();
   }
 
   function renderLoadingState(title, detail) {
