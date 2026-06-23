@@ -52,9 +52,11 @@ GitHub → apps-script/Code.gs
         ↓
 Save
         ↓
-Run authorizeSetup
+Run authorizeSetup（第一次會要求授權 Google Sheets 及 Google Drive 讀取權限）
         ↓
 Deploy → Manage deployments → Edit
+        ↓
+Web app 設定 Execute as: Me / 執行身分：我
         ↓
 Version 選 New version
         ↓
@@ -112,5 +114,6 @@ testCallback({ ok: true, albums: [...] });
 | `Missing ALBUM_SHEET_ID` | Apps Script Properties 未設定 | 加入 `ALBUM_SHEET_ID` |
 | `Cannot find sheet` | 工作頁名稱不正確 | 檢查 `ALBUM_SHEET_NAME` 是否為 `Albums` |
 | `Missing column` | Sheet 欄名與 Code.gs 不一致 | 檢查中文欄名 |
+| `DriveApp.getFolderById` 權限不足 | Apps Script 尚未授權 Google Drive 讀取權限、未部署已授權版本，或 Web App 不是以擁有者身份執行 | 在 Apps Script editor 執行 `authorizeSetup` 並完成授權，確認 Web App `Execute as` 為 `Me`，再用現有 Web App 建立 New version 後 Deploy |
 | GitHub Pages 顯示舊版 | cache 未更新 | Ctrl + F5 / 無痕模式 |
 | Apps Script JSONP 載入失敗 | Apps Script 未部署 JSONP 版本 | 重新部署現有 Web App |

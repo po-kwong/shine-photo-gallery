@@ -17,6 +17,6 @@ window.GALLERY_CONFIG = {
 
   footerText: "HHCKLA Buddhist Po Kwong School",
 
-  apiBaseUrl: "https://script.google.com/macros/s/AKfycbzOe2BGz98pp1cozsTID82MH21dbpsTokCsPUU04R_LCgf4o8nqaKrEHo45_Ci8LGGONA/exec",
+  apiBaseUrl: "https://script.google.com/macros/s/AKfycbweWhhG7sU71NkdAEL96nueluw5uJ7lOw9v0n3fGnhPmGZZvrN7NUfJeDGwtuFB5aiO/exec",
   apiMode: "jsonp"
 };

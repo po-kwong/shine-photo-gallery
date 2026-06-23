@@ -314,10 +314,26 @@ function authorizeSetup() {
   const sheetId = props.getProperty("ALBUM_SHEET_ID");
   const sheetName = props.getProperty("ALBUM_SHEET_NAME") || "Albums";
 
+  if (!sheetId) {
+    throw new Error("Missing ALBUM_SHEET_ID");
+  }
+
   const ss = SpreadsheetApp.openById(sheetId);
   const sheet = ss.getSheetByName(sheetName);
+  if (!sheet) {
+    throw new Error("Cannot find sheet: " + sheetName);
+  }
+
   const values = sheet.getDataRange().getValues();
+  const albums = getPublishedAlbums_();
 
   Logger.log("Sheet name: " + sheet.getName());
   Logger.log("Rows: " + values.length);
+  Logger.log("Published albums: " + albums.length);
+
+  if (albums.length > 0) {
+    const folder = DriveApp.getFolderById(albums[0].folderId);
+    Logger.log("First album folder: " + folder.getName());
+    Logger.log("Drive files iterator ready: " + folder.getFiles().hasNext());
+  }
 }
