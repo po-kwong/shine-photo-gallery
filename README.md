@@ -4,6 +4,14 @@
 
 網站採用純靜態前台，並透過 **Google Apps Script read-only API** 讀取 Google Sheet 相簿資料及 Google Drive 相片資料夾。
 
+## 正式入口
+
+- [光影足跡・尚片集](https://po-kwong.github.io/shine-photo-gallery/?category=%E7%84%A6%E9%BB%9E%E6%B4%BB%E5%8B%95)
+- [公司原始碼](https://github.com/po-kwong/shine-photo-gallery)
+- [返回網尚店](https://po-kwong.github.io/shine-online-shop-site/)
+
+2026-09-26 已統一網店的奶白、紫黃配色及導覽風格，並將原公開 repo 轉入 `po-kwong`，保留 Git 歷史。舊個人 Pages 為轉址入口，保留相簿／分類書籤。相片及相簿仍讀取原有 Google 資料，不需搬移相片或重新部署 Apps Script。詳見 [遷移記錄](docs/company-migration-2026-09-26.md)。
+
 ## 目前架構
 
 ```text

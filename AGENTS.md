@@ -1,5 +1,15 @@
 # AGENTS.md
 
+## 2026-09-26 公司託管與網店風格
+
+- 正式原始碼：[po-kwong/shine-photo-gallery](https://github.com/po-kwong/shine-photo-gallery)，保持 public 並保留原 Git 歷史。
+- 正式網站：https://po-kwong.github.io/shine-photo-gallery/
+- 網店「光影足跡 ↗」預設連到 `?category=焦點活動`，以新分頁開啟；相片集可返回 [網尚店](https://po-kwong.github.io/shine-online-shop-site/)。
+- 與網店共用奶白底、紫黃配色、字體及圓角按鈕；網站名稱「尚片集」保留。
+- 舊個人 Pages 由獨立的轉址入口保留查詢字串及 hash，涵蓋 category、album、from 舊書籤。舊個人 repo 只作轉址；往後原始碼一律推送公司 repo。
+- `config.js`、Apps Script API、Albums、Drive 相片來源和分享權限不因遷移而變更。不要另建後台或修改正式相簿資料。
+- 詳見 [部署流程](docs/deployment.md) 及 [本次更新記錄](docs/company-migration-2026-09-26.md)。
+
 ## 專案名稱
 
 尚回憶．尚片集（School Photo Gallery）

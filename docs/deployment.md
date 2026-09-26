@@ -1,5 +1,23 @@
 # 部署流程
 
+## 正式位置（2026-09-26）
+
+- 維護 repo：`https://github.com/po-kwong/shine-photo-gallery.git`
+- 網站：`https://po-kwong.github.io/shine-photo-gallery/`
+- 發布分支：`main`；`.github/workflows/static.yml` 經 GitHub Actions 發布。
+- 原 personal Pages `https://jasonwongkwanho.github.io/shine-photo-gallery/` 保留為獨立轉址入口，將原 query 及 hash 原樣帶到公司網站。
+
+本機既有 clone 應更新 origin：
+
+```powershell
+git remote set-url origin https://github.com/po-kwong/shine-photo-gallery.git
+git fetch origin
+```
+
+原 repo 已轉移並保留 Git 歷史。為維持舊 Pages 書籤而重建的個人 repo 只有轉址檔案，因此舊 Git remote 不再導向公司原始碼；不可繼續向舊 remote 推送本專案。
+
+這次只遷移 GitHub 前台。Google Apps Script 的 read-only API、Sheet、Drive、公開相簿條件、分享權限及 `config.js` 均沿用，不需因更換 Pages 主機而重新部署 Apps Script。網店正式導覽網址由原設定表的 `GALLERY_URL` 維護。
+
 ## GitHub Pages 部署
 
 本專案以前台靜態網站方式部署至 GitHub Pages。
