@@ -1,21 +1,19 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant-HK">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="尚片集，展示學生活動、工作體驗及校園服務相片。" />
   <title>尚片集</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Noto+Sans+HK:wght@400;500;700;900&family=Yuji+Boku&display=swap" rel="stylesheet" />
-
+  <meta name="theme-color" content="#fffcf7" />
   <link rel="stylesheet" href="./assets/styles.css" />
   <script src="./config.js"></script>
   <script defer src="./assets/app.js"></script>
 </head>
 
 <body>
+  <a class="skip-link" href="#main">跳至主要內容</a>
   <div class="site-shell">
     <header class="site-header">
       <div class="header-inner">
@@ -26,80 +24,20 @@
             <span class="brand-subtitle" id="schoolEn">HHCKLA Buddhist Po Kwong School</span>
           </span>
         </a>
-
+        <a class="shop-return" href="https://po-kwong.github.io/shine-online-shop-site/">返回網尚店 <span aria-hidden="true">↗</span></a>
       </div>
     </header>
 
-    <main>
-      <section class="shine-hero" id="homeHero">
-        <div class="hero-decoration" aria-hidden="true">
-          <span class="hero-glow glow-one"></span>
-          <span class="hero-glow glow-two"></span>
-          <span class="hero-glow glow-three"></span>
-          <span class="spark spark-one">✦</span>
-          <span class="spark spark-two">✧</span>
-          <span class="spark spark-three">●</span>
-        </div>
-
+    <main id="main" tabindex="-1">
+      <section class="shine-hero" id="homeHero" aria-labelledby="galleryTitle">
         <div class="shine-hero-inner">
           <div class="shine-hero-copy">
-            <div class="hero-kicker">
-              <span class="kicker-dot"></span>
-              SHINE'S PHOTO GALLERY
-            </div>
-
-            <h1 class="shine-title">
-              <span class="title-main">尚</span>
-              <span class="title-gradient">片集</span>
-            </h1>
-
-            <p class="shine-subtitle" id="siteSubtitle">
-              記錄學生的學習歷程，見證每一次參與、嘗試與進步。
-            </p>
+            <p class="hero-kicker">光影足跡 · SHINE'S PHOTO GALLERY</p>
+            <h1 class="shine-title" id="galleryTitle">尚片集<span class="title-flower" aria-hidden="true">✳</span></h1>
           </div>
-
-          <div class="shine-hero-art" aria-hidden="true">
-            <div class="film-strip">
-              <span></span><span></span><span></span><span></span>
-            </div>
-
-            <div class="gallery-card card-primary">
-              <div class="card-top">
-                <span class="card-badge">FOCUS</span>
-                <span class="card-date">2026</span>
-              </div>
-
-              <div class="card-photo-shape">
-                <div class="mountain"></div>
-                <div class="sun"></div>
-              </div>
-
-              <div class="card-caption">
-                <strong>焦點活動相簿</strong>
-                <p>以主打故事形式呈現精彩活動</p>
-              </div>
-            </div>
-
-            <div class="gallery-card card-secondary">
-              <div class="mini-album-icon">✨</div>
-              <strong>主打故事</strong>
-              <p>Highlight・Focus</p>
-            </div>
-
-            <div class="gallery-card card-tertiary">
-              <div class="mini-album-icon">📚</div>
-              <strong>活動回顧</strong>
-              <p>Archive・Memory</p>
-            </div>
-
-            <div class="css-camera">
-              <div class="camera-flash"></div>
-              <div class="camera-body">
-                <div class="camera-lens">
-                  <div class="lens-core"></div>
-                </div>
-              </div>
-            </div>
+          <div class="hero-note">
+            <p class="hero-note-title">每一次參與，<br>都值得被記住。</p>
+            <p class="shine-subtitle" id="siteSubtitle">記錄學生的學習歷程，見證每一次參與、嘗試與進步。</p>
           </div>
         </div>
       </section>
@@ -148,7 +86,7 @@
                 <h2 class="section-title" id="featuredTitle">焦點活動</h2>
               </div>
               <p class="section-note">
-                精選近期重點活動，以大型攝影專題形式呈現學生參與、學習與成長片段。
+                從相片出發，走進學生參與、學習與成長的故事。
               </p>
             </div>
 
@@ -162,7 +100,7 @@
                 <h2 class="section-title" id="moreTitle">活動回顧</h2>
               </div>
               <p class="section-note">
-                保留原有相簿卡片設計，並支援搜尋及排序，方便日後活動相簿愈來愈多時查找。
+                重溫每一次參與和嘗試，找回值得記住的片段。
               </p>
             </div>
 
@@ -190,7 +128,8 @@
           <p class="footer-brand" id="footerSchool">香海正覺蓮社佛教普光學校</p>
           <p id="footerText">HHCKLA Buddhist Po Kwong School</p>
         </div>
-        <p class="footer-note">公開相片由已審核 Google Drive 相簿提供</p>
+        <a class="footer-shop-link" href="https://po-kwong.github.io/shine-online-shop-site/">返回網尚店 ↗</a>
+        <p class="footer-note">每一個片段，都是成長的足跡。</p>
       </div>
     </footer>
   </div>

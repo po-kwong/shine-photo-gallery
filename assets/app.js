@@ -111,7 +111,7 @@
       const activeClass = category === state.activeCategory ? " is-active" : "";
       const href = `./?category=${encodeURIComponent(category)}`;
 
-      return `<a class="nav-link${activeClass}" href="${escapeAttr(href)}" data-category="${escapeAttr(category)}">${escapeHtml(category)}</a>`;
+      return `<a class="nav-link${activeClass}" href="${escapeAttr(href)}" data-category="${escapeAttr(category)}"${category === state.activeCategory ? ' aria-current="page"' : ''}>${escapeHtml(category)}</a>`;
     }).join("");
   }
 
@@ -157,7 +157,10 @@
 
   function syncNav() {
     document.querySelectorAll("[data-category]").forEach(function (item) {
-      item.classList.toggle("is-active", normalizeCategory(item.dataset.category || "") === state.activeCategory);
+      const active = normalizeCategory(item.dataset.category || "") === state.activeCategory;
+      item.classList.toggle("is-active", active);
+      if (active) item.setAttribute("aria-current", "page");
+      else item.removeAttribute("aria-current");
     });
   }
 
@@ -250,7 +253,7 @@
 
     const loadingHtml = renderLoadingState(
       "相簿資料載入中",
-      "正在連接 Google Drive 相片資料，請稍候..."
+      "正在整理活動相簿，請稍候…"
     );
 
     if (isFocus && els.featuredArea) {
@@ -430,7 +433,7 @@
       if (els.albumGrid) {
         els.albumGrid.innerHTML = visible.length
           ? visible.map(renderAlbumCard).join("")
-          : renderEmptyState("未找到相簿", "請嘗試更改搜尋字眼，或檢查 Google Sheet 欄 D 是否填寫「活動回顧」。");
+          : renderEmptyState("未找到相簿", "請嘗試其他搜尋字眼，或稍後再來看看。");
       }
     }
 
@@ -439,7 +442,7 @@
 
   function renderFocusAlbums(albums) {
     if (!albums.length) {
-      return renderEmptyState("更新中，密切留意", "請在 Google Sheet 欄 D 將主打活動分類設定為「焦點活動」。");
+      return renderEmptyState("更新中，密切留意", "精彩活動相片陸續整理中，歡迎稍後再來看看。");
     }
 
     const lead = albums[0];
@@ -557,7 +560,7 @@
 
     els.photoGrid.innerHTML = state.photos.length
       ? state.photos.map(renderPhotoTile).join("")
-      : renderEmptyState("暫時未有相片", "請確認 Google Drive folder 已加入已審核的 JPG、PNG 或 WebP 相片。");
+      : renderEmptyState("暫時未有相片", "相片整理中，歡迎稍後再來看看。");
   }
 
   function renderPhotoTile(photo) {
